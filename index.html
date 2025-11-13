@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrimZone - Your Campus Barber</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="assets/hero-barber.jpg" 
+        alt="Student getting a fresh haircut at University of Ilorin campus"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-black/95 via-black/85 to-black/75"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-4 py-20 text-center text-white">
+      <div class="max-w-4xl mx-auto space-y-8">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-sm text-amber-300 px-5 py-2.5 rounded-full text-sm font-semibold border border-amber-400/30 animate-fade-in">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+            <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+          </svg>
+          Mobile Barber Service
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+          Look Sharp, Stay Fresh — 
+          <span class="text-amber-400">Anywhere on Campus</span>
+        </h1>
+
+        <!-- Subtext -->
+        <p class="text-xl md:text-2xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
+          TrimZone is your friendly mobile barber service for University of Ilorin students. 
+          Fresh cuts, affordable rates, and a hassle-free experience.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+          <!-- WhatsApp Button -->
+          <a 
+            href="https://wa.me/2348012345678?text=Hi%20TrimZone!%20I'd%20like%20to%20book%20a%20haircut%20appointment." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="group w-full sm:w-auto text-lg font-semibold px-8 py-4 bg-amber-500 hover:bg-amber-400 text-gray-900 rounded-2xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            Book on WhatsApp
+          </a>
+
+          <!-- Scroll to Services Button -->
+          <button 
+            id="scrollToServices"
+            class="w-full sm:w-auto text-lg font-semibold px-8 py-4 border-2 border-amber-400 text-amber-400 rounded-2xl hover:bg-amber-400 hover:text-gray-900 shadow-xl hover:shadow-amber-400/50 transition-all duration-300 transform hover:scale-105"
+          >
+            See Services & Prices
+          </button>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="pt-12 animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mx-auto text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center space-y-12">
+        <!-- Heading -->
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">
+          Your Campus Barber, 
+          <span class="text-blue-600">Anytime, Anywhere</span>
+        </h2>
+  
+        <!-- Description -->
+        <p class="text-xl text-gray-600 leading-relaxed">
+          Campus life is busy — lectures, assignments, and social events. TrimZone brings the barbershop to you. 
+          Clean haircuts delivered wherever you are, at student-friendly prices.
+        </p>
+  
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
+          <!-- Feature 1 -->
+          <div class="group space-y-4 p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100/50 hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 rounded-2xl bg-blue-600 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">We Come to You</h3>
+            <p class="text-gray-600">
+              On-campus or off-campus, your hostel or any location. We bring the barbershop to your doorstep.
+            </p>
+          </div>
+  
+          <!-- Feature 2 -->
+          <div class="group space-y-4 p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/50 hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 rounded-2xl bg-amber-500 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="14" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <path d="M6 10 L6 3 L9 3 L9 6 L15 6 L15 3 L18 3 L18 10"></path>
+                <line x1="3" y1="14" x2="21" y2="14"></line>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Professional Cuts</h3>
+            <p class="text-gray-600">
+              Fresh fades, clean trims, and sharp edges. Quality barbering with attention to detail.
+            </p>
+          </div>
+  
+          <!-- Feature 3 -->
+          <div class="group space-y-4 p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100/50 hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 rounded-2xl bg-blue-600 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Student-Friendly</h3>
+            <p class="text-gray-600">
+              Affordable pricing, flexible scheduling, and chill campus vibes. Built for students.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section id="services" class="py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto space-y-12">
+        <!-- Section Header -->
+        <div class="text-center space-y-4">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900">
+            Our Services — <span class="text-blue-600">Tailored for Students</span>
+          </h2>
+          <p class="text-xl text-gray-600">
+            Quality cuts at student-friendly prices
+          </p>
+        </div>
+  
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1 - Regular Haircut -->
+          <div class="group relative bg-white border-2 border-gray-200 rounded-3xl hover:border-blue-600 hover:shadow-2xl transition-all duration-300 p-8 text-center overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+            <div class="relative z-10 space-y-6">
+              <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 mx-auto flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <path d="M6 10 L6 3 L9 3 L9 6 L15 6 L15 3 L18 3 L18 10"></path>
+                  <line x1="3" y1="14" x2="21" y2="14"></line>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900">Regular Haircut</h3>
+              <p class="text-gray-600">Clean fade, low cut, or simple trim</p>
+              <div class="text-5xl font-bold text-blue-600">₦1,000</div>
+            </div>
+          </div>
+  
+          <!-- Card 2 - Design/Carving -->
+          <div class="group relative bg-white border-2 border-gray-200 rounded-3xl hover:border-amber-500 hover:shadow-2xl transition-all duration-300 p-8 text-center overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+            <div class="relative z-10 space-y-6">
+              <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 mx-auto flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900">HairLine Up Only</h3>
+              <p class="text-gray-600">Sharp edges and precise detailing</p>
+              <div class="text-5xl font-bold text-amber-500">₦500</div>
+            </div>
+          </div>
+  
+          <!-- Card 3 - Haircut with Dye -->
+          <div class="group relative bg-white border-2 border-gray-200 rounded-3xl hover:border-blue-600 hover:shadow-2xl transition-all duration-300 p-8 text-center overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+            <div class="relative z-10 space-y-6">
+              <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 mx-auto flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v6M12 18v4M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M18 12h4M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900">Haircut with Dye</h3>
+              <p class="text-gray-600">Fresh cut with a vibrant, custom hair color </p>
+              <div class="text-5xl font-bold text-blue-600">₦1,500</div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto space-y-12">
+        <!-- Section Header -->
+        <div class="text-center space-y-4">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900">
+            Check Out <span class="text-blue-600">Our Cuts</span>
+          </h2>
+        </div>
+  
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Item 1 -->
+          <div class="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
+            <div class="aspect-square overflow-hidden">
+              <img
+                src="assets/Haircut Sample 1.jpg"
+                alt="Perfect Fade"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 right-0 p-6">
+                <p class="text-white font-bold text-xl">Perfect Fade</p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Item 2 -->
+          <div class="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
+            <div class="aspect-square overflow-hidden">
+              <img
+                src="assets/Haircut Sample 2.jpg"
+                alt="Clean fade haircut with perfect blend"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 right-0 p-6">
+                <p class="text-white font-bold text-xl">Fresh Cut</p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Item 3 -->
+          <div class="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
+            <div class="aspect-square overflow-hidden">
+              <img
+                src="assets/Haircut Sample 3.jpg"
+                alt="Happy student with fresh cut"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 right-0 p-6">
+                <p class="text-white font-bold text-xl">Campus Fresh</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section class="py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center space-y-10">
+        <!-- Heading -->
+        <h2 class="text-4xl md:text-5xl font-bold">
+          Ready for Your Fresh Cut?
+        </h2>
+  
+        <!-- Description -->
+        <p class="text-xl text-blue-100 leading-relaxed max-w-2xl mx-auto">
+          Booking your next haircut has never been easier. Just click below and get scheduled instantly.
+        </p>
+  
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
+          <!-- WhatsApp Button -->
+          <a
+            href="https://wa.me/2349038238746?text=Hi%20TrimZone!%20I'd%20like%20to%20book%20a%20haircut%20appointment."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto text-lg px-10 py-5 bg-green-500 hover:bg-green-600 text-white font-bold rounded-2xl shadow-2xl hover:shadow-green-500/50 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            Book on WhatsApp
+          </a>
+  
+          <!-- Call Button -->
+          <a
+            href="tel:2349038238746"
+            class="w-full sm:w-auto text-lg px-10 py-5 border-2 border-white text-white font-bold rounded-2xl bg-white/10 backdrop-blur-sm hover:bg-white hover:text-blue-600 shadow-2xl hover:shadow-white/50 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+            </svg>
+            Call: 09038238746
+          </a>
+        </div>
+  
+        <!-- Trust Indicators -->
+        <div class="pt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center space-y-2">
+            <p class="text-5xl font-bold text-amber-400">500+</p>
+            <p class="text-blue-200">Happy Students</p>
+          </div>
+          <div class="text-center space-y-2">
+            <p class="text-5xl font-bold text-amber-400">1000+</p>
+            <p class="text-blue-200">Fresh Cuts</p>
+          </div>
+          <div class="text-center space-y-2">
+            <p class="text-5xl font-bold text-amber-400">5.0</p>
+            <p class="text-blue-200">Average Rating</p>
+          </div>
+          <div class="text-center">
+            <p class="text-5xl text-amber-400 font-bold">24/7</p>
+            <p class="text-white/80 text-sm">Booking Available</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER SECTION -->
+<footer class="bg-gray-100 border-t">
+    <div class="container mx-auto px-4 py-12">
+      <div class="max-w-6xl mx-auto space-y-8">
+        <!-- Brand & Description -->
+        <div class="text-center space-y-4">
+          <h3 class="text-2xl font-bold text-blue-600">TrimZone</h3>
+          <p class="text-gray-500 max-w-md mx-auto">
+            Your trusted mobile barber service for University of Ilorin students. 
+            Fresh cuts delivered anywhere on campus.
+          </p>
+        </div>
+  
+        <!-- Social Links -->
+        <div class="flex justify-center gap-4">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/2348012345678" target="_blank" rel="noopener noreferrer"
+             class="w-12 h-12 rounded-full bg-green-100 hover:bg-green-500 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
+             aria-label="WhatsApp">
+             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+          </a>
+          <!-- Instagram -->
+          <a href="https://instagram.com/trimzone" target="_blank" rel="noopener noreferrer"
+             class="w-12 h-12 rounded-full bg-pink-100 hover:bg-pink-500 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
+             aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a1 1 0 011 1v2a1 1 0 01-1 1h-2a1 1 0 01-1-1V5a1 1 0 011-1h2zm-5 2a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/>
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://facebook.com/trimzone" target="_blank" rel="noopener noreferrer"
+             class="w-12 h-12 rounded-full bg-blue-100 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
+             aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988H7.898v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.772-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+            </svg>
+          </a>
+        </div>
+  
+        <!-- Copyright -->
+        <div class="text-center pt-8 border-t">
+          <p class="text-sm text-gray-500">
+            © <span id="currentYear"></span> TrimZone – Your Campus Barber | Powered by 
+            <span class="font-semibold text-gray-700">Emmanuel Adeyemi</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  
+  </footer>
+  
+  <script>
+    // Scroll to Services Section
+    document.getElementById("scrollToServices").addEventListener("click", () => {
+      const section = document.getElementById("services");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+     // Auto-update year
+     document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
