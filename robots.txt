@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://trimzone.netlify.app/sitemap.xml
